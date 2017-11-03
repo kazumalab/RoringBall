@@ -20,8 +20,8 @@ public class CameraManager : MonoBehaviour {
 	void Update () {
 		if (isChase) {
 			this.transform.position = player.transform.position + Vector3.forward * -distance + Vector3.up * height;
+			this.transform.LookAt (player.transform);
 		}
-		this.transform.LookAt (player.transform);
 	}
 
 	public void StopChase () {

@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour {
 	private readonly string CLEAR_SCENE_NAME = "GameClear";
 	private readonly string FAILD_SCENE_NAME = "GameOver";
 
-	void Start () {
+	void Awake () {
 		if (instance == null) {
 			instance = this;
 		}
@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour {
 		if (OnFaildCallback != null) {
 			OnFaildCallback ();
 		}
-		yield return new WaitForSeconds (1f);
+		yield return new WaitForSeconds (2f);
 		SceneManager.LoadScene (FAILD_SCENE_NAME);
 	}
 }

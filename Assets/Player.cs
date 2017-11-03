@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour {
 
 	private Rigidbody rb;
+	private float Speed = 10f;
 
 	// Use this for initialization
 	void Start () {
@@ -13,10 +14,10 @@ public class Player : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		float dy = Input.GetAxis ("Horizontal");
-		float dx = Input.GetAxis ("Vertical");
+		float dx = Input.GetAxis ("Horizontal");
+		float dy = Input.GetAxis ("Vertical");
 
 		Vector3 direction = Vector3.right * dx + Vector3.forward * dy;
-		rb.AddForce (direction);
+		rb.AddForce (direction * Speed);
 	}
 }

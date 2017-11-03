@@ -6,7 +6,7 @@ public class WarpZone : MonoBehaviour {
 
 	void OnTriggerEnter(Collider target) {
 		if (target.tag == "Player") {
-
+			GameManager.instance.GameClear ();
 		}
 	}
 }
